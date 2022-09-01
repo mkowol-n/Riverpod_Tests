@@ -3,12 +3,11 @@ import 'package:riverpod_poc/input_field/input_field_state.dart';
 
 import '../../base_riverpod/base_state_notifier.dart';
 
-
 class TestScreenNotifier extends BaseStateNotifier<TestScreenState> {
-  TestScreenNotifier(): super(TestScreenState(input: InputFieldState.create('')));
-
+  TestScreenNotifier()
+      : super(TestScreenState(input: InputFieldState.create('')));
 
   void printcos() {
-    print(state.input.textController.value.text);
+    state = state.copyWith(dsgdsg: '${state.dsgdsg ?? ''}1');
   }
 }

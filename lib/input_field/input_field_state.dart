@@ -21,4 +21,6 @@ class InputFieldState with _$InputFieldState {
   void dispose() {
     textController.dispose();
   }
+
+  String get text => textController.value.text;
 }

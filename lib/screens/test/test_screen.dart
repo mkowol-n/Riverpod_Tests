@@ -12,7 +12,7 @@ class TestScreen extends ConsumerWidget {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(40),
         child: AppBar(
-          title: const Text("title"),
+          title: Text(state.dsgdsg ?? "dsf"),
         ),
       ),
       body: Column(
@@ -26,7 +26,7 @@ class TestScreen extends ConsumerWidget {
             width: 200,
             color: Colors.red,
             child: MaterialButton(
-              onPressed: () => Navigator.pop(context),
+              onPressed: ref.read(baseNotifierProvider.notifier).printcos,
             ),
           )
         ],
