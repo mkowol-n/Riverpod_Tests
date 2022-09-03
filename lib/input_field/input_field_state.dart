@@ -30,6 +30,10 @@ class InputFieldState with _$InputFieldState {
     return validator is Valid;
   }
 
+  void setText(String text) {
+    textController.text = text;
+  }
+
   InputFieldState setValidation(InputFieldStatus newValidator) {
     return copyWith(validator: newValidator);
   }
