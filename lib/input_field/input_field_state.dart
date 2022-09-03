@@ -13,13 +13,25 @@ class InputFieldState with _$InputFieldState {
   }) = _InputFieldState;
 
   static InputFieldState create(String? text) {
-    return InputFieldState(textController: TextEditingController(text: text));
+    return InputFieldState(
+      textController: TextEditingController(
+        text: text,
+      ),
+    );
   }
 
   const InputFieldState._();
 
   void dispose() {
     textController.dispose();
+  }
+
+  bool isValid() {
+    return validator is Valid;
+  }
+
+  InputFieldState setValidation(InputFieldStatus newValidator) {
+    return copyWith(validator: newValidator);
   }
 
   String get text => textController.value.text;

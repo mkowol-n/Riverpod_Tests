@@ -6,6 +6,10 @@ abstract class BaseStateNotifier<T extends BaseState>
     extends StateNotifier<T> {
   BaseStateNotifier(super.state);
 
+  void copy(T Function() fun) {
+    state = fun();
+  }
+
   @override
   void dispose() {
     state.dispose();
